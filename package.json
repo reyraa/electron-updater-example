@@ -1,6 +1,6 @@
 {
   "name": "electron-updater-example",
-  "version": "12.2.0",
+  "version": "12.3.0",
   "main": "main.js",
   "description": "electron-updater example project",
   "author": "Matt Haggard",
@@ -10,15 +10,25 @@
   },
   "devDependencies": {
     "electron": "12.0.5",
-    "electron-builder": "22.10.4"
+    "electron-builder": "22.10.4",
+    "electron-builder-notarize": "^1.2.0"
   },
   "dependencies": {
     "electron-log": "^1.3.0",
     "electron-updater": "4.3.9"
   },
   "build": {
+    "artifactName": "lisk-${os}-${arch}-${version}.${ext}",
+    "asar": true,
     "appId": "com.github.iffy.electronupdaterexample",
+    "copyright": "Copyright © 2017-2020 Lisk",
+    "afterSign": "electron-builder-notarize",
+    "publish": [
+      "github"
+    ],
     "mac": {
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
       "category": "your.app.category.type",
       "target": [
         "zip",
