@@ -1,6 +1,6 @@
 {
   "name": "electron-updater-example",
-  "version": "12.1.0",
+  "version": "12.2.0",
   "main": "main.js",
   "description": "electron-updater example project",
   "author": "Matt Haggard",
